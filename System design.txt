@@ -1,0 +1,25 @@
+User Interface Layer : -
+ 1)Editor Component -> rich text editor supporting real time editing   eg: Quill.js, Draft.js
+2) Collaboration Feature -> UI elects for displaying user cursors, indicating selections, and showing presence of collaborators
+3) User Interactions -> Event listeners for typing, cursor movement, and other interactions that trigger real time update.
+
+
+
+State management :-
+Local State -> Using UseState or similar hooks for managing local state changes within the editor component
+Global State -> using a state management library like redux or react context api to manage the data application-wide like user authentication, document metadata and collaboration status.
+
+
+Real time Communication : -
+ 1) Websocket integration -> ensuring low-latency and bidirectional communication for instant updates
+2) Event and Messages -> using JSON for structured data exchange
+
+
+Collaborative Editing Logic : -
+Operational Transformation -> ensuring consistency and correctness of document changes across users
+Conflict Resolution -> including automatic resolution, manual intervention or providing conflict resolution tools to user  
+
+
+Error handling and Feedback : -
+Error states -> displaying error and handle edge cases such as network disruption , server outrage
+Feedback mechanism -> provide user feedback for successful operations , document changes and collaboration status update .
