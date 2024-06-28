@@ -1,0 +1,32 @@
+const numIslands = (grid) => {
+    const newGrid = [...grid].map((subArr,i) => (
+        subArr.map((num,i) => subArr[i] = parseInt(num))))
+        
+        const rows = newGrid.lentgth
+        const cols = newGrid[0].length
+        let islands = 0
+        
+        
+        const traverse = (row,col) => {
+            if(row < 0 || col < 0 || row >= rows || col >= cols || !newGrid[row][col]){
+                return
+            }
+            
+            newGrid[row][col] = 0
+            
+            traverse(row, col+1)
+            traverse(row, col-1)
+            traverse(row + 1, col)
+            traverse(row -1, col)
+        } 
+        
+        for(let row = 0 ; row < rows ; ++row){
+            for(let col = 0 ; col < cols ; ++col){
+                if(newGrid[col][row]){
+                    islands++
+                    traverse(row,col)
+                }
+            }
+        }
+        return islands
+}
